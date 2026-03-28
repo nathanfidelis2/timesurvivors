@@ -67,6 +67,11 @@ export class UpgradeSystem {
     return powerInstance;
   }
 
+  /** Mark a power as owned at the given level (used for initial power selection). */
+  initPower(powerClass, level = 1) {
+    this._levels[powerClass.id] = level;
+  }
+
   getLevel(powerId) {
     return this._levels[powerId] || 0;
   }

@@ -4,13 +4,15 @@ import { Renderer }       from './src/core/Renderer.js';
 import { CollisionSystem } from './src/core/CollisionSystem.js';
 import { WaveManager }    from './src/core/WaveManager.js';
 import { UpgradeSystem }  from './src/core/UpgradeSystem.js';
+import { PowerPool }      from './src/core/PowerPool.js';
 
 import { Player }         from './src/entities/Player.js';
 
-import { HUD }            from './src/ui/HUD.js';
-import { LevelUpScreen }  from './src/ui/LevelUpScreen.js';
-import { MainMenu }       from './src/ui/MainMenu.js';
-import { GameOverScreen } from './src/ui/GameOverScreen.js';
+import { HUD }              from './src/ui/HUD.js';
+import { LevelUpScreen }    from './src/ui/LevelUpScreen.js';
+import { MainMenu }         from './src/ui/MainMenu.js';
+import { GameOverScreen }   from './src/ui/GameOverScreen.js';
+import { PowerSelectScreen } from './src/ui/PowerSelectScreen.js';
 
 import { randomRange, randomFrom } from './src/utils/MathUtils.js';
 import { EraShift }       from './src/powers/active/EraShift.js';
@@ -95,7 +97,7 @@ class Game {
     this._mainMenu = new MainMenu();
     this._gameOverScreen = new GameOverScreen();
 
-    this._state = 'menu'; // menu | playing | levelup | gameover
+    this._state = 'menu'; // menu | selecting | playing | levelup | gameover
 
     this._player = null;
     this._enemies = [];
@@ -105,6 +107,7 @@ class Game {
 
     this._waveManager = null;
     this._upgradeSystem = null;
+    this._powerSelectScreen = null;
 
     this._wavesData = null;
     this._erasData = null;
@@ -145,7 +148,17 @@ class Game {
     const era = this._waveManager.getCurrentEra();
     this._renderer.setEra(era);
 
-    this._state = 'playing';
+    // Show power selection before playing
+    const options = PowerPool.drawOptions(3);
+    this._powerSelectScreen = new PowerSelectScreen(options, (chosenPower) => {
+      this._upgradeSystem.initPower(chosenPower.constructor, 1);
+      this._player.powers.push(chosenPower);
+      chosenPower.onAcquire(this._player);
+      this._powerSelectScreen = null;
+      this._state = 'playing';
+    });
+    this._powerSelectScreen.init(this._canvas);
+    this._state = 'selecting';
   }
 
   _triggerLevelUp() {
@@ -177,6 +190,9 @@ class Game {
       case 'menu':
         this._mainMenu.handleClick(x, y, w, h, () => this._startGame());
         break;
+      case 'selecting':
+        // handled by PowerSelectScreen directly via canvas events
+        break;
       case 'levelup':
         this._levelUpScreen.handleClick(x, y, w, h);
         break;
@@ -196,6 +212,9 @@ class Game {
     switch (this._state) {
       case 'menu':
         this._mainMenu.update(dt);
+        break;
+      case 'selecting':
+        if (this._powerSelectScreen) this._powerSelectScreen.update(dt);
         break;
       case 'playing':
         this._updatePlaying(dt);
@@ -347,6 +366,12 @@ class Game {
     switch (this._state) {
       case 'menu':
         this._mainMenu.draw(ctx, this._canvas);
+        break;
+
+      case 'selecting':
+        if (this._powerSelectScreen) {
+          this._powerSelectScreen.draw(ctx, this._canvas.width, this._canvas.height);
+        }
         break;
 
       case 'playing':
