@@ -245,6 +245,11 @@ class Game {
     // Player update
     player.update(dt, this._input, this._enemies);
 
+    // Update all powers
+    for (const power of player.powers) {
+      power.update(dt, player, this._enemies);
+    }
+
     // Check EraShift power
     for (const power of player.powers) {
       if (power instanceof EraShift && power.hasPendingShift) {
@@ -306,7 +311,7 @@ class Game {
     let leveled = false;
     for (const orb of collected) {
       orb.collected = true;
-      if (player.gainXP(orb.value)) leveled = true;
+      if (player.gainXp(orb.value)) leveled = true;
     }
     this._xpOrbs = this._xpOrbs.filter(o => !o.collected);
     for (const orb of this._xpOrbs) orb.update(dt);
@@ -380,7 +385,13 @@ class Game {
         for (const orb of this._xpOrbs) orb.draw(ctx, camera);
         for (const enemy of this._enemies) enemy.draw(ctx, camera);
         for (const p of this._particles) p.draw(ctx, camera);
-        if (this._player) this._player.draw(ctx, camera);
+        if (this._player) {
+          // Draw power effects (e.g. lightning bolts, blast rings)
+          for (const power of this._player.powers) {
+            if (power.draw) power.draw(ctx, camera, this._player);
+          }
+          this._player.draw(ctx, camera);
+        }
 
         // HUD
         const era = this._waveManager ? this._waveManager.getCurrentEra() : null;

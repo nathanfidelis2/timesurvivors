@@ -418,6 +418,17 @@ export class Player {
   // ─────────────────────────────────────────────
   //  LÓGICA
   // ─────────────────────────────────────────────
+  /** Collect all Projectile-based projectiles from powers that use them. */
+  getProjectiles() {
+    const result = [];
+    for (const power of this.powers) {
+      if (Array.isArray(power.projectiles)) {
+        result.push(...power.projectiles);
+      }
+    }
+    return result;
+  }
+
   gainXp(amount) {
     this.xp += amount;
     if (this.xp >= this.xpToNext) {

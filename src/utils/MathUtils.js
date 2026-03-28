@@ -38,6 +38,18 @@ export function weightedRandom(items) {
   return items[items.length - 1];
 }
 
+export function dist(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
+
+export function distSq(x1, y1, x2, y2) {
+  return (x2 - x1) ** 2 + (y2 - y1) ** 2;
+}
+
+export function easeOut(t) {
+  return 1 - (1 - t) * (1 - t);
+}
+
 export function easeIn(t) {
   return t * t;
 }
