@@ -1,0 +1,96 @@
+{
+  "prehistoric": [
+    {
+      "time": 0,
+      "enemies": [
+        { "type": "Dinosaur",     "count": 3, "interval": 3.0 }
+      ]
+    },
+    {
+      "time": 30,
+      "enemies": [
+        { "type": "Dinosaur",     "count": 4, "interval": 2.5 },
+        { "type": "CavemanBrute", "count": 1, "interval": 6.0 }
+      ]
+    },
+    {
+      "time": 60,
+      "enemies": [
+        { "type": "Dinosaur",     "count": 5, "interval": 2.0 },
+        { "type": "CavemanBrute", "count": 2, "interval": 5.0 }
+      ]
+    },
+    {
+      "time": 120,
+      "enemies": [
+        { "type": "Dinosaur",     "count": 6, "interval": 1.5 },
+        { "type": "CavemanBrute", "count": 3, "interval": 4.0 }
+      ]
+    },
+    {
+      "time": 200,
+      "enemies": [
+        { "type": "Dinosaur",     "count": 8, "interval": 1.2 },
+        { "type": "CavemanBrute", "count": 4, "interval": 3.0 }
+      ]
+    }
+  ],
+  "medieval": [
+    {
+      "time": 0,
+      "enemies": [
+        { "type": "KnightZombie",   "count": 3, "interval": 2.5 }
+      ]
+    },
+    {
+      "time": 30,
+      "enemies": [
+        { "type": "KnightZombie",   "count": 4, "interval": 2.0 },
+        { "type": "DragonHatchling","count": 2, "interval": 5.0 }
+      ]
+    },
+    {
+      "time": 60,
+      "enemies": [
+        { "type": "KnightZombie",   "count": 5, "interval": 1.8 },
+        { "type": "DragonHatchling","count": 3, "interval": 4.0 }
+      ]
+    },
+    {
+      "time": 120,
+      "enemies": [
+        { "type": "KnightZombie",   "count": 7, "interval": 1.5 },
+        { "type": "DragonHatchling","count": 4, "interval": 3.0 }
+      ]
+    }
+  ],
+  "future": [
+    {
+      "time": 0,
+      "enemies": [
+        { "type": "RobotDrone",   "count": 4, "interval": 2.0 }
+      ]
+    },
+    {
+      "time": 30,
+      "enemies": [
+        { "type": "RobotDrone",   "count": 5, "interval": 1.8 },
+        { "type": "CyberMutant",  "count": 1, "interval": 8.0 }
+      ]
+    },
+    {
+      "time": 60,
+      "enemies": [
+        { "type": "RobotDrone",   "count": 6, "interval": 1.5 },
+        { "type": "CyberMutant",  "count": 2, "interval": 6.0 }
+      ]
+    },
+    {
+      "time": 120,
+      "enemies": [
+        { "type": "RobotDrone",   "count": 8, "interval": 1.2 },
+        { "type": "CyberMutant",  "count": 3, "interval": 5.0 }
+      ]
+    }
+  ]
+}

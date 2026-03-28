@@ -1,0 +1,32 @@
+[
+  {
+    "id": "prehistoric",
+    "name": "Pré-histórico",
+    "startTime": 0,
+    "endTime": 300,
+    "backgroundColor": "#3e2723",
+    "groundColor": "#5d4037",
+    "accentColor": "#ff8f00",
+    "icon": "🦕"
+  },
+  {
+    "id": "medieval",
+    "name": "Medieval",
+    "startTime": 300,
+    "endTime": 600,
+    "backgroundColor": "#263238",
+    "groundColor": "#37474f",
+    "accentColor": "#7986cb",
+    "icon": "⚔️"
+  },
+  {
+    "id": "future",
+    "name": "Futuro Distópico",
+    "startTime": 600,
+    "endTime": 900,
+    "backgroundColor": "#0a0a1a",
+    "groundColor": "#1a1a2e",
+    "accentColor": "#00e5ff",
+    "icon": "🤖"
+  }
+]
