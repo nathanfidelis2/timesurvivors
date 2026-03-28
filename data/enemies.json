@@ -1,0 +1,8 @@
+[
+  { "type": "Dinosaur",     "name": "Dinossauro Rex",        "era": "prehistoric", "hp": 120, "speed": 80,  "damage": 25, "xpDrop": 15, "size": 48, "color": "#5a8a3c", "behavior": "charge",  "spawnWeight": 3 },
+  { "type": "CavemanBrute", "name": "Homem das Cavernas",    "era": "prehistoric", "hp": 200, "speed": 50,  "damage": 40, "xpDrop": 25, "size": 40, "color": "#8d6e63", "behavior": "swarm",   "spawnWeight": 2 },
+  { "type": "KnightZombie", "name": "Cavaleiro Zumbi",       "era": "medieval",    "hp": 180, "speed": 65,  "damage": 35, "xpDrop": 20, "size": 36, "color": "#78909c", "behavior": "chase",   "spawnWeight": 3 },
+  { "type": "DragonHatchling","name": "Filhote de Dragão",   "era": "medieval",    "hp": 80,  "speed": 120, "damage": 15, "xpDrop": 12, "size": 28, "color": "#ef5350", "behavior": "ranged",  "spawnWeight": 2 },
+  { "type": "RobotDrone",   "name": "Drone Robô",            "era": "future",      "hp": 100, "speed": 100, "damage": 20, "xpDrop": 18, "size": 30, "color": "#00bcd4", "behavior": "patrol",  "spawnWeight": 3 },
+  { "type": "CyberMutant",  "name": "Cibernético Mutante",   "era": "future",      "hp": 300, "speed": 40,  "damage": 60, "xpDrop": 40, "size": 52, "color": "#7c4dff", "behavior": "charge",  "spawnWeight": 1 }
+]

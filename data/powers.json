@@ -1,0 +1,92 @@
+[
+  {
+    "id": "TemporalShield",
+    "name": "Escudo Temporal",
+    "icon": "🛡️",
+    "type": "passive",
+    "maxLevel": 5,
+    "description": "Reduz o dano recebido em 10% por nível.",
+    "levels": [
+      { "level": 1, "damageReduction": 0.10 },
+      { "level": 2, "damageReduction": 0.20 },
+      { "level": 3, "damageReduction": 0.30 },
+      { "level": 4, "damageReduction": 0.40 },
+      { "level": 5, "damageReduction": 0.50 }
+    ]
+  },
+  {
+    "id": "ChronoAura",
+    "name": "Aura Crono",
+    "icon": "💚",
+    "type": "passive",
+    "maxLevel": 5,
+    "description": "Regenera 2 HP/s por nível.",
+    "levels": [
+      { "level": 1, "regenRate": 2 },
+      { "level": 2, "regenRate": 4 },
+      { "level": 3, "regenRate": 6 },
+      { "level": 4, "regenRate": 8 },
+      { "level": 5, "regenRate": 10 }
+    ]
+  },
+  {
+    "id": "TimeFreezeBlast",
+    "name": "Explosão Temporal",
+    "icon": "❄️",
+    "type": "active",
+    "maxLevel": 5,
+    "description": "Congela todos os inimigos por 2s. Cooldown: 8s.",
+    "levels": [
+      { "level": 1, "freezeDuration": 2, "cooldown": 8,  "damage": 0  },
+      { "level": 2, "freezeDuration": 2, "cooldown": 7,  "damage": 10 },
+      { "level": 3, "freezeDuration": 3, "cooldown": 6,  "damage": 20 },
+      { "level": 4, "freezeDuration": 3, "cooldown": 5,  "damage": 35 },
+      { "level": 5, "freezeDuration": 4, "cooldown": 4,  "damage": 50 }
+    ]
+  },
+  {
+    "id": "ParadoxBullets",
+    "name": "Balas Paradoxo",
+    "icon": "🔄",
+    "type": "active",
+    "maxLevel": 5,
+    "description": "Dispara projéteis que invertem direção. Cooldown: 3s.",
+    "levels": [
+      { "level": 1, "damage": 40,  "cooldown": 3.0, "bullets": 3, "speed": 300 },
+      { "level": 2, "damage": 55,  "cooldown": 2.5, "bullets": 3, "speed": 320 },
+      { "level": 3, "damage": 70,  "cooldown": 2.0, "bullets": 5, "speed": 340 },
+      { "level": 4, "damage": 90,  "cooldown": 1.8, "bullets": 5, "speed": 360 },
+      { "level": 5, "damage": 120, "cooldown": 1.5, "bullets": 7, "speed": 400 }
+    ]
+  },
+  {
+    "id": "EraShift",
+    "name": "Mudança de Era",
+    "icon": "🌀",
+    "type": "active",
+    "maxLevel": 5,
+    "description": "Muda a era atual e elimina todos os inimigos. Cooldown: 30s.",
+    "levels": [
+      { "level": 1, "cooldown": 30 },
+      { "level": 2, "cooldown": 25 },
+      { "level": 3, "cooldown": 20 },
+      { "level": 4, "cooldown": 15 },
+      { "level": 5, "cooldown": 10 }
+    ]
+  },
+  {
+    "id": "TemporalClone",
+    "name": "Clone Temporal",
+    "icon": "👥",
+    "type": "active",
+    "maxLevel": 5,
+    "description": "Cria um clone que imita seu movimento por 5s. Cooldown: 15s.",
+    "levels": [
+      { "level": 1, "duration": 5,  "cooldown": 15, "damageMult": 0.5  },
+      { "level": 2, "duration": 7,  "cooldown": 13, "damageMult": 0.6  },
+      { "level": 3, "duration": 9,  "cooldown": 11, "damageMult": 0.7  },
+      { "level": 4, "duration": 11, "cooldown": 9,  "damageMult": 0.85 },
+      { "level": 5, "duration": 15, "cooldown": 7,  "damageMult": 1.0  }
+    ]
+  }
+]

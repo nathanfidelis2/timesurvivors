@@ -1,0 +1,83 @@
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ── Canvas ──────────────────────────────────────────────────────────────────── */
+#gameCanvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: default;
+}
+
+/* ── Virtual Joystick ────────────────────────────────────────────────────────── */
+/*
+  The joystick is drawn directly on the canvas (in main.js / _drawJoystick),
+  so no separate DOM element is needed.  These CSS rules are kept as stubs in
+  case a DOM-based joystick is added later.
+*/
+.joystick-base {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.joystick-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(79, 195, 247, 0.7);
+  pointer-events: none;
+  transition: transform 0.05s linear;
+}
+
+/* ── UI Overlay (general utility, used for future DOM-based menus) ────────────── */
+.ui-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ui-overlay.active {
+  pointer-events: auto;
+}
+
+/* ── Level-up card animations (CSS fallback) ─────────────────────────────────── */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.levelup-card {
+  animation: slideUp 0.25s ease-out both;
+}
+
+/* ── Scrollbar hide (in case any overflow is introduced) ─────────────────────── */
+::-webkit-scrollbar { display: none; }
